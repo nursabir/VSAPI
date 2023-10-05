@@ -12,6 +12,7 @@ public interface ProjectRepository extends JpaRepository<Project, Long> {
     List<Project> findAll();
 
     Optional<Project> findById(Long id);
+
     Optional<Project> findByStateAndInfoManager(String stateProject, Manager loginModerator);
 
     Project save(Project project);

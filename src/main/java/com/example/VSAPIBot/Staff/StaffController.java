@@ -45,7 +45,7 @@ public class StaffController {
     @GetMapping("/{projectId}")
     @ResponseBody
     public ResponseEntity<List<Staff>> getStaffByIdProject(
-            @PathVariable("idProject") Project idProject) {
+            @PathVariable("projectId") Project idProject) {
         try {
             List<Staff> staffList = staffRepository.findByIdProject(idProject);
             if (!staffList.isEmpty()) {

@@ -14,10 +14,35 @@ public class Project {
     private Long id;
     @Column(name = "title")
     private String title;
+
+    public String getDescriptionProject() {
+        return descriptionProject;
+    }
+
+    public void setDescriptionProject(String descriptionProject) {
+        this.descriptionProject = descriptionProject;
+    }
+
+    //    public String getDescriptionProject() {
+//        return descriptionProject;
+//    }
+//
+//    public void setDescriptionProject(String description) {
+//        this.descriptionProject = description;
+//    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
     @Column(name = "type")
     private String type;
     @Column(name = "description_Project")
-    private String description;
+    private String descriptionProject;
     @Column(name = "requirements")
     private String requirements;
     @Column(name = "state_Project")
@@ -57,13 +82,13 @@ public class Project {
         this.type = type;
     }
 
-    public String getDescriptionProject() {
-        return description;
-    }
-
-    public void setDescriptionProject(String description) {
-        this.description = description;
-    }
+//    public String getDescriptionProject() {
+//        return descriptionProject;
+//    }
+//
+//    public void setDescriptionProject(String description) {
+//        this.descriptionProject = description;
+//    }
 
     public String getRequirements() {
         return requirements;

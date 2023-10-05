@@ -24,10 +24,10 @@ public class ProjectController {
 
     @GetMapping("/{id}")
     @ResponseBody
-    public ResponseEntity<Project> getProjectById(@PathVariable("idProject") Long idProject) {
+    public ResponseEntity<Project> getProjectById(@PathVariable("id") Long id ) {
         try {
-            Project project = projectRepository.findById(idProject)
-                    .orElseThrow(() -> new ResourceNotFoundException("Project not found with id: " + idProject));
+            Project project = projectRepository.findById(id)
+                    .orElseThrow(() -> new ResourceNotFoundException("Project not found with id: " + id));
             return ResponseEntity.ok().body(project);
         } catch (ResourceNotFoundException ex) {
             logger.error("Error while fetching project by id ", ex);
@@ -38,11 +38,11 @@ public class ProjectController {
         }
     }
 
-    @GetMapping("/{state}/{infoManager}")
+    @GetMapping("/{modification}/{id}")
     @ResponseBody
     public ResponseEntity<Project> getProjectByStateAndInfoManager(
-            @PathVariable("stateProject") String stateProject,
-            @PathVariable("loginManager") Manager infoManager) {
+            @PathVariable("modification") String stateProject,
+            @PathVariable("id") Manager infoManager) {
         try {
             Project project = projectRepository.findByStateAndInfoManager(stateProject, infoManager)
                     .orElseThrow(() -> new ResourceNotFoundException("Project not found with state: " + stateProject
@@ -60,17 +60,8 @@ public class ProjectController {
 
     @PostMapping("/")
     @ResponseBody
-    public ResponseEntity<Project> createProject(
-//
-//             @Validated
-                                                     @RequestBody Project project) {
-        /*
-        поздравляю у нас опять нулл
-         */
-
-
-        System.out.println(project.getComment());
-        System.out.println(" а че ");
+    public ResponseEntity<Project> createProject(@RequestBody Project project) {
+        System.out.println(project.getTitle());
         try {
             Project createdProject = projectRepository.save(project); //todo вот тут теперь добавляем все прочее
             return ResponseEntity.status(HttpStatus.CREATED).body(createdProject);
@@ -82,7 +73,7 @@ public class ProjectController {
 
     @PutMapping("/{id}")
     @ResponseBody
-    public ResponseEntity<Project> updateProject(@PathVariable("idProject") Long idProject, @RequestBody Project projectDetails) {
+    public ResponseEntity<Project> updateProject(@PathVariable("id") Long idProject, @RequestBody Project projectDetails) {
         try {
             Project project = projectRepository.findById(idProject)
                     .orElseThrow(() -> new ResourceNotFoundException("Project not found with id: " + idProject));

@@ -21,7 +21,7 @@ public class ManagerController {
 
     @GetMapping("/{login}")
     @ResponseBody
-    public ResponseEntity<Manager> getUserByLogin(@PathVariable("login_Manager") Long login) {
+    public ResponseEntity<Manager> getUserByLogin(@PathVariable("login") Long login) {
         System.out.println(" попали в гет ");
         try {
             Manager manager = managerRepository.findByLogin(login);

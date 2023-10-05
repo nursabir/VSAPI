@@ -21,7 +21,7 @@ public class ModeratorController {
 
     @GetMapping("/{login}")
     @ResponseBody
-    public ResponseEntity<Moderator> getModerator(@PathVariable("loginModerator") Long loginModerator) {
+    public ResponseEntity<Moderator> getModerator(@PathVariable("login") Long loginModerator) {
         Moderator moderator;
         try {
             moderator = moderatorRepository.findByLogin(loginModerator)

@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "project_manager")
 public class Manager {
-    //    @Id
     @Column(name = "login_Manager")
     private Long login;
     @Id

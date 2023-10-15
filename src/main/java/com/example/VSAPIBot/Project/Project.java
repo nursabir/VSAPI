@@ -50,11 +50,11 @@ public class Project {
     @Column(name = "comment")
     private String comment;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "login_Manager")
     private Manager infoManager;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "login_Moderator")
     private Moderator infoModer;
 

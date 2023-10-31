@@ -85,6 +85,7 @@ public class StaffController {
     @ResponseBody
     public ResponseEntity<Staff> createStaff(@RequestBody Staff staff) {
         try {
+            System.out.println(staff.toString());
             Staff createdStaff = staffRepository.save(staff);
             return new ResponseEntity<>(createdStaff, HttpStatus.CREATED);
         } catch (Exception e) {

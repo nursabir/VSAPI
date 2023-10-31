@@ -2,7 +2,9 @@ package com.example.VSAPIBot.Staff;
 
 import com.example.VSAPIBot.Project.Project;
 import jakarta.persistence.*;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "staff")
 public class Staff {

@@ -40,11 +40,10 @@ public class ModeratorController {
     @ResponseBody
     public ResponseEntity<List<Moderator>> getAllModerators() {
         try {
-            System.out.println(" Общаемся ебать");
+
             List<Moderator> moderators = moderatorRepository.findAll();
             return new ResponseEntity<>(moderators, HttpStatus.OK);
         } catch (Exception e) {
-            System.out.println("НЕ Общаемся ебать");
             LOGGER.error("Failed to get all moderators", e);
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }

@@ -3,8 +3,15 @@ package com.example.VSAPIBot.Project;
 import com.example.VSAPIBot.Moderator.Moderator;
 import com.example.VSAPIBot.Manager.Manager;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-
+@Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "project")
 public class Project {
@@ -27,8 +34,8 @@ public class Project {
 //        return descriptionProject;
 //    }
 //
-//    public void setDescriptionProject(String description) {
-//        this.descriptionProject = description;
+//    public void setDescriptionProject(String title) {
+//        this.descriptionProject = title;
 //    }
 
     public String getState() {
@@ -86,8 +93,8 @@ public class Project {
 //        return descriptionProject;
 //    }
 //
-//    public void setDescriptionProject(String description) {
-//        this.descriptionProject = description;
+//    public void setDescriptionProject(String title) {
+//        this.descriptionProject = title;
 //    }
 
     public String getRequirements() {

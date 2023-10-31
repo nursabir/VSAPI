@@ -10,7 +10,7 @@ public class Response {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_Response")
     private Long id;
-    @Column(name = "description")
+    @Column(name = "title")
     private String description;
 
     @ManyToOne

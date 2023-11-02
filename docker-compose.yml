@@ -1,0 +1,48 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: 'postgres-container'
+    restart: unless-stopped
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_DB=volsib
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=148868
+    networks:
+      - appnet
+    volumes:
+      - db:/var/lib/postgresql/data
+  application-backend:
+    image: 'app-image'
+    container_name: 'app-container-backend'
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    networks:
+      - appnet
+    build:
+      context: ./
+    depends_on:
+      - postgres
+  application-frontend:
+    image: 'python-image'
+    container_name: 'app-container-frontend'
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+    networks:
+      - internet
+      - appnet
+    depends_on:
+      - application-backend
+      - postgres
+    build:
+      context: C:\Users\fikus\PycharmProjects\TGROBOT\
+networks:
+  appnet:
+  internet:
+volumes:
+  db:
+

@@ -134,4 +134,9 @@ public class ProjectController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
+
+    @GetMapping("/check")
+    public String check(){
+        return "Ассаляму алейкум";
+    }
 }

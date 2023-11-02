@@ -135,8 +135,4 @@ public class ProjectController {
         }
     }
 
-    @GetMapping("/check")
-    public String check(){
-        return "Ассаляму алейкум";
-    }
 }

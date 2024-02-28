@@ -1,0 +1,22 @@
+POST http://localhost:8080/projects/
+Content-Type: application/json
+Auth: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzIiwicm9sZSI6IkFETUlOIiwic3RhdGUiOiJDT05GSVJNRUQiLCJlbWFpbCI6ImxlbmFyQG1haWwuY29tIn0.B7dXHxrPOZ2IYhNreyCqIJhlLUyh959t9XhObeP98iM
+
+
+{
+  "id": 0,
+  "title": "string",
+  "infoManager": {
+    "id": 0,
+    "login": 30
+  },
+  "infoModer": {
+    "login":807235082
+  },
+  "comment": "string",
+  "state": "string",
+  "requirements": "string",
+  "descriptionProject": "string",
+  "type": "string"
+}
+
